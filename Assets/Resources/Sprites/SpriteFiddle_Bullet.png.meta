@@ -1,0 +1,608 @@
+fileFormatVersion: 2
+guid: 100885e6cf3e5314b86a107ef7f80c60
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 350265598269104884
+    second: SpriteFiddle_Bullet_0
+  - first:
+      213: 8791531072619543101
+    second: SpriteFiddle_Bullet_1
+  - first:
+      213: -4088026959668088237
+    second: SpriteFiddle_Bullet_2
+  - first:
+      213: 7434485469863283878
+    second: SpriteFiddle_Bullet_3
+  - first:
+      213: 1935634917454261095
+    second: SpriteFiddle_Bullet_4
+  - first:
+      213: 2997927323130523892
+    second: SpriteFiddle_Bullet_5
+  - first:
+      213: 8349458205868084753
+    second: SpriteFiddle_Bullet_6
+  - first:
+      213: -1529377344839531532
+    second: SpriteFiddle_Bullet_7
+  - first:
+      213: 3374439656180103976
+    second: SpriteFiddle_Bullet_8
+  - first:
+      213: 9218368829964058044
+    second: SpriteFiddle_Bullet_9
+  - first:
+      213: -7046096181183403263
+    second: SpriteFiddle_Bullet_10
+  - first:
+      213: 7240727682600715230
+    second: SpriteFiddle_Bullet_11
+  - first:
+      213: -4434186450320366803
+    second: SpriteFiddle_Bullet_12
+  - first:
+      213: -4471881085665731029
+    second: SpriteFiddle_Bullet_13
+  - first:
+      213: -39999095173923618
+    second: SpriteFiddle_Bullet_14
+  - first:
+      213: -1539141088855400580
+    second: SpriteFiddle_Bullet_15
+  - first:
+      213: -3882095745152020176
+    second: SpriteFiddle_Bullet_16
+  - first:
+      213: -162497051407306134
+    second: SpriteFiddle_Bullet_17
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpriteFiddle_Bullet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 406.8889
+        height: 354
+      alignment: 9
+      pivot: {x: 0.77, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f2aed1b4b46cd400800000000000000
+      internalID: 350265598269104884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFiddle_Bullet_1
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 0
+        width: 406.8889
+        height: 354
+      alignment: 9
+      pivot: {x: 0.77, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3afb475eeac10a70800000000000000
+      internalID: 8791531072619543101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFiddle_Bullet_2
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 0
+        width: 406.8889
+        height: 354
+      alignment: 9
+      pivot: {x: 0.83, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35273c4b3296447c0800000000000000
+      internalID: -4088026959668088237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFiddle_Bullet_3
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 0
+        width: 406.8889
+        height: 354
+      alignment: 9
+      pivot: {x: 0.74, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ac010f25299c2760800000000000000
+      internalID: 7434485469863283878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFiddle_Bullet_4
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 0
+        width: 406.8889
+        height: 354
+      alignment: 9
+      pivot: {x: 0.8, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76b24b5b3b1ccda10800000000000000
+      internalID: 1935634917454261095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFiddle_Bullet_5
+      rect:
+        serializedVersion: 2
+        x: 2030
+        y: 0
+        width: 407
+        height: 354
+      alignment: 9
+      pivot: {x: 0.83, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f0f1a54407ca9920800000000000000
+      internalID: 2997927323130523892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFiddle_Bullet_6
+      rect:
+        serializedVersion: 2
+        x: 2436
+        y: 0
+        width: 406.8889
+        height: 354
+      alignment: 9
+      pivot: {x: 0.89, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11eccbb300c3fd370800000000000000
+      internalID: 8349458205868084753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFiddle_Bullet_7
+      rect:
+        serializedVersion: 2
+        x: 2842
+        y: 0
+        width: 406.8889
+        height: 354
+      alignment: 9
+      pivot: {x: 0.68, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f34f49686f86cae0800000000000000
+      internalID: -1529377344839531532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFiddle_Bullet_8
+      rect:
+        serializedVersion: 2
+        x: 3248
+        y: 0
+        width: 406.8889
+        height: 354
+      alignment: 9
+      pivot: {x: 0.77, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82b3b9e1dfa64de20800000000000000
+      internalID: 3374439656180103976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFiddle_Bullet_9
+      rect:
+        serializedVersion: 2
+        x: 3654
+        y: 0
+        width: 406.8889
+        height: 354
+      alignment: 9
+      pivot: {x: 0.83, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbd7a8e1c993eef70800000000000000
+      internalID: 9218368829964058044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFiddle_Bullet_10
+      rect:
+        serializedVersion: 2
+        x: 4060
+        y: 0
+        width: 406.8889
+        height: 354
+      alignment: 9
+      pivot: {x: 0.89, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10ba353eadc373e90800000000000000
+      internalID: -7046096181183403263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFiddle_Bullet_11
+      rect:
+        serializedVersion: 2
+        x: 4466
+        y: 0
+        width: 406.8889
+        height: 354
+      alignment: 9
+      pivot: {x: 0.89, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed3c0ccd67b3c7460800000000000000
+      internalID: 7240727682600715230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFiddle_Bullet_12
+      rect:
+        serializedVersion: 2
+        x: 4872
+        y: 0
+        width: 406.8889
+        height: 354
+      alignment: 9
+      pivot: {x: 0.98, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23edc0baea9672c0800000000000000
+      internalID: -4434186450320366803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFiddle_Bullet_13
+      rect:
+        serializedVersion: 2
+        x: 5278
+        y: 0
+        width: 406.8889
+        height: 354
+      alignment: 9
+      pivot: {x: 0.65, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2e1b1b78dfa0f1c0800000000000000
+      internalID: -4471881085665731029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFiddle_Bullet_14
+      rect:
+        serializedVersion: 2
+        x: 5684
+        y: 0
+        width: 407
+        height: 354
+      alignment: 9
+      pivot: {x: 0.68, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edc32dce805e17ff0800000000000000
+      internalID: -39999095173923618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFiddle_Bullet_15
+      rect:
+        serializedVersion: 2
+        x: 6090
+        y: 0
+        width: 406.8889
+        height: 354
+      alignment: 9
+      pivot: {x: 0.8, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7fd09b955fd3aae0800000000000000
+      internalID: -1539141088855400580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFiddle_Bullet_16
+      rect:
+        serializedVersion: 2
+        x: 6496
+        y: 0
+        width: 406.8889
+        height: 354
+      alignment: 9
+      pivot: {x: 0.74, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 031982eec76002ac0800000000000000
+      internalID: -3882095745152020176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFiddle_Bullet_17
+      rect:
+        serializedVersion: 2
+        x: 6902
+        y: 0
+        width: 406.8889
+        height: 354
+      alignment: 9
+      pivot: {x: 0.77, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a62b1ddeac1bebdf0800000000000000
+      internalID: -162497051407306134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SpriteFiddle_Bullet_12: -4434186450320366803
+      SpriteFiddle_Bullet_4: 1935634917454261095
+      SpriteFiddle_Bullet_11: 7240727682600715230
+      SpriteFiddle_Bullet_1: 8791531072619543101
+      SpriteFiddle_Bullet_0: 350265598269104884
+      SpriteFiddle_Bullet_13: -4471881085665731029
+      SpriteFiddle_Bullet_6: 8349458205868084753
+      SpriteFiddle_Bullet_9: 9218368829964058044
+      SpriteFiddle_Bullet_14: -39999095173923618
+      SpriteFiddle_Bullet_8: 3374439656180103976
+      SpriteFiddle_Bullet_16: -3882095745152020176
+      SpriteFiddle_Bullet_5: 2997927323130523892
+      SpriteFiddle_Bullet_2: -4088026959668088237
+      SpriteFiddle_Bullet_15: -1539141088855400580
+      SpriteFiddle_Bullet_10: -7046096181183403263
+      SpriteFiddle_Bullet_7: -1529377344839531532
+      SpriteFiddle_Bullet_17: -162497051407306134
+      SpriteFiddle_Bullet_3: 7434485469863283878
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
