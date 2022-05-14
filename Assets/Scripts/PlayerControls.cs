@@ -21,7 +21,7 @@ public class PlayerControls : MonoBehaviour
 	private bool onGround; 
 	private bool airPush; // used to determine if you will have a little push forward when jumping forward (works in tandem with "airPushForce",see Controls "Jumping for more") 
 	private bool myCanGrab;
-	private bool myIsGrabbing;
+	public bool MyIsGrabbing { get; set; }
 
 	private float moveDirection;
 	private float movementSpeed; // Movement Speed in realtime
@@ -581,7 +581,7 @@ public class PlayerControls : MonoBehaviour
 		if (myEdge != null)
         {
 			Debug.Log("GRABBING!");
-			if (myIsGrabbing)
+			if (MyIsGrabbing)
             {
 				Drop();
             }
@@ -594,7 +594,7 @@ public class PlayerControls : MonoBehaviour
 
 	void OnPullUp()
     {
-		if (myIsGrabbing)
+		if (MyIsGrabbing)
         {
 			PullUp();
         }
@@ -683,7 +683,7 @@ public class PlayerControls : MonoBehaviour
 
 	void Grab()
     {
-		myIsGrabbing = true;
+		MyIsGrabbing = true;
 		transform.position = myEdge.GetHangingposition();
 		myBody.constraints = RigidbodyConstraints2D.FreezeAll;
     }
@@ -692,12 +692,12 @@ public class PlayerControls : MonoBehaviour
     {
 		myBody.constraints = RigidbodyConstraints2D.FreezeRotation;
 		transform.position = new Vector3(transform.position.x, transform.position.y - .1f);
-		myIsGrabbing = false;
+		MyIsGrabbing = false;
     }
 
 	void PullUp()
     {
-		myIsGrabbing = false;
+		MyIsGrabbing = false;
 		transform.position = myEdge.GetStandUpPosition();
 		myBody.constraints = RigidbodyConstraints2D.FreezeRotation;
 	}

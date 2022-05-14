@@ -74,6 +74,17 @@ public class isLanding : StateMachineBehaviour
             #endregion 
         }
 
+        if (Player.GetComponent<PlayerControls>().MyIsGrabbing)
+
+        {
+
+
+            animator.SetBool("isLedgeGrabbing", true);
+            animator.SetBool("isFalling", false);
+
+
+        }
+
     }
 
         // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

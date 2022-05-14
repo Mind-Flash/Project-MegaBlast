@@ -66,6 +66,17 @@ public class isJumpMoving : StateMachineBehaviour
 
         }
 
+        if (Player.GetComponent<PlayerControls>().MyIsGrabbing)
+
+        {
+
+
+            animator.SetBool("isLedgeGrabbing", true);
+            animator.SetBool("isJumpMoving", false);
+
+
+        }
+
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
