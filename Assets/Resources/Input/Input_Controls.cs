@@ -62,6 +62,24 @@ public partial class @Input_Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Grab"",
+                    ""type"": ""Button"",
+                    ""id"": ""bf473647-2ec9-4504-8a65-b05af22f862b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PullUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""b399d2c6-c5b2-4385-9824-1da0095ebc60"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -229,6 +247,28 @@ public partial class @Input_Controls : IInputActionCollection2, IDisposable
                     ""action"": ""Start/Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5fcb51e8-6b29-47f8-ad28-944b69441d0d"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Grab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ed2afc93-64c1-444b-9a34-f52fff07853d"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PullUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -241,6 +281,8 @@ public partial class @Input_Controls : IInputActionCollection2, IDisposable
         m_Default_Jump = m_Default.FindAction("Jump", throwIfNotFound: true);
         m_Default_Shoot = m_Default.FindAction("Shoot", throwIfNotFound: true);
         m_Default_StartPause = m_Default.FindAction("Start/Pause", throwIfNotFound: true);
+        m_Default_Grab = m_Default.FindAction("Grab", throwIfNotFound: true);
+        m_Default_PullUp = m_Default.FindAction("PullUp", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -304,6 +346,8 @@ public partial class @Input_Controls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Default_Jump;
     private readonly InputAction m_Default_Shoot;
     private readonly InputAction m_Default_StartPause;
+    private readonly InputAction m_Default_Grab;
+    private readonly InputAction m_Default_PullUp;
     public struct DefaultActions
     {
         private @Input_Controls m_Wrapper;
@@ -312,6 +356,8 @@ public partial class @Input_Controls : IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Default_Jump;
         public InputAction @Shoot => m_Wrapper.m_Default_Shoot;
         public InputAction @StartPause => m_Wrapper.m_Default_StartPause;
+        public InputAction @Grab => m_Wrapper.m_Default_Grab;
+        public InputAction @PullUp => m_Wrapper.m_Default_PullUp;
         public InputActionMap Get() { return m_Wrapper.m_Default; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -333,6 +379,12 @@ public partial class @Input_Controls : IInputActionCollection2, IDisposable
                 @StartPause.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnStartPause;
                 @StartPause.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnStartPause;
                 @StartPause.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnStartPause;
+                @Grab.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnGrab;
+                @Grab.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnGrab;
+                @Grab.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnGrab;
+                @PullUp.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnPullUp;
+                @PullUp.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnPullUp;
+                @PullUp.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnPullUp;
             }
             m_Wrapper.m_DefaultActionsCallbackInterface = instance;
             if (instance != null)
@@ -349,6 +401,12 @@ public partial class @Input_Controls : IInputActionCollection2, IDisposable
                 @StartPause.started += instance.OnStartPause;
                 @StartPause.performed += instance.OnStartPause;
                 @StartPause.canceled += instance.OnStartPause;
+                @Grab.started += instance.OnGrab;
+                @Grab.performed += instance.OnGrab;
+                @Grab.canceled += instance.OnGrab;
+                @PullUp.started += instance.OnPullUp;
+                @PullUp.performed += instance.OnPullUp;
+                @PullUp.canceled += instance.OnPullUp;
             }
         }
     }
@@ -359,5 +417,7 @@ public partial class @Input_Controls : IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
         void OnStartPause(InputAction.CallbackContext context);
+        void OnGrab(InputAction.CallbackContext context);
+        void OnPullUp(InputAction.CallbackContext context);
     }
 }

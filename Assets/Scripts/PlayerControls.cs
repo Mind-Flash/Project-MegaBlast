@@ -12,15 +12,23 @@ public class PlayerControls : MonoBehaviour
 
 	private GameObject groundChecker; 
 	private GameObject player;   // Player Character
-	private GameObject master;	// Master object in scene (takes care of global values)
+	private GameObject master;  // Master object in scene (takes care of global values)
 
+
+	Rigidbody2D myBody;
+	
 	private bool facingRight; // value for direction faced
 	private bool onGround; 
 	private bool airPush; // used to determine if you will have a little push forward when jumping forward (works in tandem with "airPushForce",see Controls "Jumping for more") 
+	private bool myCanGrab;
+	private bool myIsGrabbing;
 
 	private float moveDirection;
 	private float movementSpeed; // Movement Speed in realtime
 	private float jumpSpeed; // Determens force of jump thus both speed and height
+
+	EdgeHandler myEdge;
+	
 
 	private Input_Controls inputControls; // Input Actions object (innehåller control layout)
 
@@ -568,18 +576,41 @@ public class PlayerControls : MonoBehaviour
 	//============================
 	#endregion
 
+	void OnGrab()
+    {
+		if (myEdge != null)
+        {
+			Debug.Log("GRABBING!");
+			if (myIsGrabbing)
+            {
+				Drop();
+            }
+			else
+            {
+				Grab();
+            }
+        }
+    }
+
+	void OnPullUp()
+    {
+		if (myIsGrabbing)
+        {
+			PullUp();
+        }
+    }
 	#endregion
 
 	private void Awake()
     
 	{
-
 		groundChecker = gameObject.GetComponentInChildren<GroundDetector>().gameObject;
 
 		airPushForce = 1000;
 
 		inputControls = new Input_Controls();
 
+		myBody = GetComponent<Rigidbody2D>();
 	}
 
 	public void OnEnable() // Needed for input controller
@@ -634,7 +665,7 @@ public class PlayerControls : MonoBehaviour
 
 	{	
 
-		if (mainSetupScript.GamePaused == false) //Run game as normal if not paused
+		if (!mainSetupScript.GamePaused) //Run game as normal if not paused
 
 		{
 			//NOTE: MAYBE USE THE ONENABLE FUNCTIONS TO PAUSE INSTEAD OF ONMOVE ETC.
@@ -643,6 +674,32 @@ public class PlayerControls : MonoBehaviour
 
 		}
 
+	}
+
+	public void SetGrabable(EdgeHandler anEdge)
+    {
+		myEdge = anEdge;
+    }
+
+	void Grab()
+    {
+		myIsGrabbing = true;
+		transform.position = myEdge.GetHangingposition();
+		myBody.constraints = RigidbodyConstraints2D.FreezeAll;
+    }
+
+	void Drop()
+    {
+		myBody.constraints = RigidbodyConstraints2D.FreezeRotation;
+		transform.position = new Vector3(transform.position.x, transform.position.y - .1f);
+		myIsGrabbing = false;
+    }
+
+	void PullUp()
+    {
+		myIsGrabbing = false;
+		transform.position = myEdge.GetStandUpPosition();
+		myBody.constraints = RigidbodyConstraints2D.FreezeRotation;
 	}
 
 }

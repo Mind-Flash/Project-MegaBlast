@@ -71,3 +71,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 desktop-tutorial/
+Assets/Ludiq/Ludiq.Core/Generated/ProjectSettings.asset
