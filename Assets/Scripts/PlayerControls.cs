@@ -14,6 +14,8 @@ public class PlayerControls : MonoBehaviour
 	private GameObject player;   // Player Character
 	private GameObject master;  // Master object in scene (takes care of global values)
 
+	[SerializeField]
+	public GameObject myAimPosition;
 
 	Rigidbody2D myBody;
 	
@@ -611,9 +613,19 @@ public class PlayerControls : MonoBehaviour
 		inputControls = new Input_Controls();
 
 		myBody = GetComponent<Rigidbody2D>();
+
+        inputControls.Default.Aim.performed += Aim_performed;
 	}
 
-	public void OnEnable() // Needed for input controller
+    private void Aim_performed(InputAction.CallbackContext obj)
+    {
+		
+		Vector2 aimDirection = obj.ReadValue<Vector2>();
+		Aim(aimDirection);
+        throw new System.NotImplementedException();
+    }
+
+    public void OnEnable() // Needed for input controller
 
 	{
 		inputControls.Enable();
@@ -701,5 +713,17 @@ public class PlayerControls : MonoBehaviour
 		transform.position = myEdge.GetStandUpPosition();
 		myBody.constraints = RigidbodyConstraints2D.FreezeRotation;
 	}
+
+	void Aim(Vector2 aDirection)
+    {
+		Vector2 direction = aDirection.normalized;
+		Vector3 aimDirection = new Vector3(direction.x, direction.y, 0);
+		myAimPosition.transform.position = transform.position + aimDirection;
+		myAimPosition.transform.LookAt(transform);
+	
+		myAimPosition.transform.Rotate(new Vector3(180, 0, 0), Space.Self);
+		
+		Debug.Log(myAimPosition.transform.position);
+    }
 
 }

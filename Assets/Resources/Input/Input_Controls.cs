@@ -80,6 +80,15 @@ public partial class @Input_Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Aim"",
+                    ""type"": ""Value"",
+                    ""id"": ""790e6f86-1a7f-4e58-9b9b-c22c21c88c00"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -269,6 +278,61 @@ public partial class @Input_Controls : IInputActionCollection2, IDisposable
                     ""action"": ""PullUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""a125a961-d51d-4b8c-a7c4-bfa31af8a01a"",
+                    ""path"": ""2DVector(mode=2)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""ed9a4eba-7b5e-4648-9369-cb8ed52eecc2"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""da21d63a-7359-427f-bfbf-e66e5983233a"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""a5890646-7af2-4098-b983-20992ad662ae"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""ee814792-40fd-4337-ac07-89a42c588e8d"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -283,6 +347,7 @@ public partial class @Input_Controls : IInputActionCollection2, IDisposable
         m_Default_StartPause = m_Default.FindAction("Start/Pause", throwIfNotFound: true);
         m_Default_Grab = m_Default.FindAction("Grab", throwIfNotFound: true);
         m_Default_PullUp = m_Default.FindAction("PullUp", throwIfNotFound: true);
+        m_Default_Aim = m_Default.FindAction("Aim", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -348,6 +413,7 @@ public partial class @Input_Controls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Default_StartPause;
     private readonly InputAction m_Default_Grab;
     private readonly InputAction m_Default_PullUp;
+    private readonly InputAction m_Default_Aim;
     public struct DefaultActions
     {
         private @Input_Controls m_Wrapper;
@@ -358,6 +424,7 @@ public partial class @Input_Controls : IInputActionCollection2, IDisposable
         public InputAction @StartPause => m_Wrapper.m_Default_StartPause;
         public InputAction @Grab => m_Wrapper.m_Default_Grab;
         public InputAction @PullUp => m_Wrapper.m_Default_PullUp;
+        public InputAction @Aim => m_Wrapper.m_Default_Aim;
         public InputActionMap Get() { return m_Wrapper.m_Default; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -385,6 +452,9 @@ public partial class @Input_Controls : IInputActionCollection2, IDisposable
                 @PullUp.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnPullUp;
                 @PullUp.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnPullUp;
                 @PullUp.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnPullUp;
+                @Aim.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnAim;
+                @Aim.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnAim;
+                @Aim.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnAim;
             }
             m_Wrapper.m_DefaultActionsCallbackInterface = instance;
             if (instance != null)
@@ -407,6 +477,9 @@ public partial class @Input_Controls : IInputActionCollection2, IDisposable
                 @PullUp.started += instance.OnPullUp;
                 @PullUp.performed += instance.OnPullUp;
                 @PullUp.canceled += instance.OnPullUp;
+                @Aim.started += instance.OnAim;
+                @Aim.performed += instance.OnAim;
+                @Aim.canceled += instance.OnAim;
             }
         }
     }
@@ -419,5 +492,6 @@ public partial class @Input_Controls : IInputActionCollection2, IDisposable
         void OnStartPause(InputAction.CallbackContext context);
         void OnGrab(InputAction.CallbackContext context);
         void OnPullUp(InputAction.CallbackContext context);
+        void OnAim(InputAction.CallbackContext context);
     }
 }
