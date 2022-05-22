@@ -32,7 +32,6 @@ public class isLedgeGrabbing : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
-
         animator.SetBool("isLedgeGrabbing", false);
         animator.SetBool("isJumpMoving", false); //Placed here, for some reason it will not work on JumpMove anim exit
         
