@@ -77,10 +77,10 @@ public class Projectile : MonoBehaviour
 
         {
 
-			GameObject ProjectileBlastInstantiated = Instantiate(Resources.Load("Prefabs/ProjectileExplosion") as GameObject, this.transform.position, transform.rotation);
-			Destroy(this.gameObject);
+            GameObject ProjectileBlastInstantiated = Instantiate(Resources.Load("Prefabs/ProjectileExplosion") as GameObject, this.transform.position, transform.rotation);
+            Destroy(this.gameObject);
 
-		}
+        }
 
 		if (collisionObject.gameObject.tag == "PlayerDead")
 

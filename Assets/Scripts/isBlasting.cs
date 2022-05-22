@@ -9,9 +9,8 @@ public class isBlasting : StateMachineBehaviour
 	private float projectileHeight; // y position of projectile relative to character
     #endregion
 
-
-    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+	// OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
         Player = animator.gameObject;
@@ -23,15 +22,19 @@ public class isBlasting : StateMachineBehaviour
 
 		{
 
-			Vector2 projectileSpawnSpeed; 
-
-			if (Player.GetComponent<PlayerControls>().FacingRight == true)
+			Vector2 projectileSpawnSpeed;
+			PlayerControls controlls = Player.GetComponent<PlayerControls>();
+			if (controlls.FacingRight == true)
 
 			{
 
 				Vector2 projectileSpawnPos = new Vector2(Player.GetComponent<BoxCollider2D>().transform.localPosition.x + -5 * -1, Player.transform.position.y + projectileHeight);
+				Vector2 spawnPosition = controlls.myAimPosition.transform.position;
+				//Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
+				//Quaternion rotation = Quaternion.LookRotation(controlls.myAimPosition.transform.position - Player.transform.position, Vector3.forward);
+				GameObject shotInstantiated = Instantiate(Resources.Load("Prefabs/Projectile") as GameObject, spawnPosition, controlls.myAimPosition.transform.rotation);
+				//shotInstantiated.transform.LookAt(controlls.myAimPosition.transform, Vector3.up);
 
-				GameObject shotInstantiated = Instantiate(Resources.Load("Prefabs/Projectile") as GameObject, projectileSpawnPos, Player.transform.rotation);
 
 				shotInstantiated.tag = "Projectile";
 
