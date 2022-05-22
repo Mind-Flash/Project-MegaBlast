@@ -84,6 +84,7 @@ public class isJumpMoving : StateMachineBehaviour
     {
 
         animator.SetBool("isJumping", false);
+        animator.SetBool("isJumpingMoving", false);
 
     }
 
