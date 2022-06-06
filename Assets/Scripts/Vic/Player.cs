@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     SpriteRenderer mySpriteRenderer;
     Animator myAnimator;
 
+    [SerializeField]
     EdgeHandler myEdge;
     
     [SerializeField]
@@ -46,6 +47,34 @@ public class Player : MonoBehaviour
     private void Update()
     {
         MovePlayer();
+        
+    }
+
+    private void LateUpdate()
+    {
+        CheckState();
+    }
+
+    void CheckState()
+    {
+        if (!myIsGrounded && myBody.velocity.y <= 0)
+        {
+            myAnimator.SetBool("IsFalling", true);
+            myAnimator.SetBool("HasLanded", false);
+        }
+        else
+        {
+            myAnimator.SetBool("IsFalling", false);
+        }
+        if (myAnimator.GetCurrentAnimatorStateInfo(0).IsName("JumpLand"))
+        {
+            if (myAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1f)
+            {
+                myAnimator.SetBool("IsLanding", false);
+                myAnimator.SetBool("HasLanded", true);
+            }
+        }
+        
     }
 
     public void Move(InputAction.CallbackContext aCallbackContext)
@@ -76,6 +105,7 @@ public class Player : MonoBehaviour
             myIsGrounded = false;
             myBody.AddForce(Vector2.up * myJumpForce, ForceMode2D.Impulse);
             myAnimator.SetBool("IsJumping", true);
+            myAnimator.SetBool("HasLanded", false);
         }
         Debug.Log("Jumping");
     }
@@ -94,7 +124,11 @@ public class Player : MonoBehaviour
         if (myIsGrabbing && aCallbackContext.phase == InputActionPhase.Started)
         {
             Debug.Log("Pulling Up");
-            PullUp();
+            transform.position = myEdge.GetStandUpPosition();
+            myBody.constraints = RigidbodyConstraints2D.FreezeRotation;
+            myIsGrabbing = false;
+            myEdge = null;
+            //PullUp();
         }
     }
 
@@ -106,6 +140,7 @@ public class Player : MonoBehaviour
             myBody.constraints = RigidbodyConstraints2D.FreezeRotation;
             transform.position = new Vector3(transform.position.x, transform.position.y - .1f);
             myIsGrabbing = false;
+            myEdge = null;
         }
     }
 
@@ -185,7 +220,10 @@ public class Player : MonoBehaviour
 
     public void SetGrabable(EdgeHandler anEdge)
     {
-        myEdge = anEdge;
+        if(!myIsGrabbing)
+        {
+            myEdge = anEdge;
+        }
     }
 
     void Grab()
@@ -195,24 +233,25 @@ public class Player : MonoBehaviour
         myBody.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
-    void PullUp()
-    {
-        transform.position = myEdge.GetStandUpPosition();
-        myBody.constraints = RigidbodyConstraints2D.FreezeRotation;
-        myIsGrabbing = false;
-    }
+    //void PullUp()
+    //{
+    //    transform.position = myEdge.GetStandUpPosition();
+    //    myBody.constraints = RigidbodyConstraints2D.FreezeRotation;
+    //    myIsGrabbing = false;
+    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground") && !myIsGrounded)
         {
             Debug.Log("Grounded");
-            myIsGrounded = true;
             if (!myIsMoving)
             {
                 myMovementDirection = Vector3.zero;
             }
             myAnimator.SetBool("IsJumping", false);
+            myAnimator.SetBool("IsLanding", true);
+            myIsGrounded = true;
         }
     }
 
