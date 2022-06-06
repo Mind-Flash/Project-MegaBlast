@@ -695,7 +695,10 @@ public class PlayerControls : MonoBehaviour
 
 	void Grab()
     {
-		MyIsGrabbing = true;
+        MyIsGrabbing = true;
+
+        gameObject.GetComponent<Animator>().SetBool("isLedgeGrabbing", true);
+
 		transform.position = myEdge.GetHangingposition();
 		myBody.constraints = RigidbodyConstraints2D.FreezeAll;
     }
@@ -710,6 +713,14 @@ public class PlayerControls : MonoBehaviour
 	void PullUp()
     {
 		MyIsGrabbing = false;
+
+		gameObject.GetComponent<Animator>().SetBool("isLedgePulling", true);
+
+		
+	}
+
+	public void StandUp()
+    {
 		transform.position = myEdge.GetStandUpPosition();
 		myBody.constraints = RigidbodyConstraints2D.FreezeRotation;
 	}
