@@ -5,9 +5,7 @@ using UnityEngine;
 public class GrabLedge : MonoBehaviour
 {
     [SerializeField]
-    PlayerControls myPlayer;
-    [SerializeField]
-    Input_Controls inputControls;
+    Player myPlayer;
     
 
     private void OnTriggerStay2D(Collider2D collision)

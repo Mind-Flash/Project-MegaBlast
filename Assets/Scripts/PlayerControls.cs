@@ -622,7 +622,7 @@ public class PlayerControls : MonoBehaviour
 		
 		Vector2 aimDirection = obj.ReadValue<Vector2>();
 		Aim(aimDirection);
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 
     public void OnEnable() // Needed for input controller
